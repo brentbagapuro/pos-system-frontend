@@ -1,14 +1,31 @@
-import './ExploreContainer.css';
+import {
+  IonList,
+  IonItem,
+  IonCheckbox,
+  IonLabel,
+  IonNote,
+  IonBadge,
+} from '@ionic/react'
 
-interface ContainerProps { }
+interface ContainerProps {}
 
 const ExploreContainer: React.FC<ContainerProps> = () => {
   return (
-    <div className="container">
-      <strong>Ready to create an app?</strong>
-      <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-    </div>
-  );
-};
+    <>
+      <IonList>
+        <IonItem>
+          <IonCheckbox slot="start" />
+          <IonLabel>
+            <h1>Create Idea</h1>
+            <IonNote>Run Idea by Brandy</IonNote>
+          </IonLabel>
+          <IonBadge color="success" slot="end">
+            5 Days
+          </IonBadge>
+        </IonItem>
+      </IonList>
+    </>
+  )
+}
 
-export default ExploreContainer;
+export default ExploreContainer

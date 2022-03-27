@@ -1,25 +1,39 @@
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
-import ExploreContainer from '../components/ExploreContainer';
-import './Home.css';
+import {
+  IonPage,
+  IonContent,
+  IonFab,
+  IonFabButton,
+  IonIcon,
+  IonHeader,
+  IonToolbar,
+  IonButton,
+  IonMenuButton,
+  IonButtons,
+} from '@ionic/react'
+import { add } from 'ionicons/icons'
+import { RouteComponentProps } from 'react-router'
 
-const Home: React.FC = () => {
+import { Menu, Toolbar } from '../components/Layout'
+import ExploreContainer from '../components/ExploreContainer'
+
+const Home: React.FC<RouteComponentProps> = (props) => {
   return (
-    <IonPage>
-      <IonHeader>
-        <IonToolbar>
-          <IonTitle>Blank</IonTitle>
-        </IonToolbar>
-      </IonHeader>
-      <IonContent fullscreen>
-        <IonHeader collapse="condense">
-          <IonToolbar>
-            <IonTitle size="large">Blank</IonTitle>
-          </IonToolbar>
-        </IonHeader>
-        <ExploreContainer />
-      </IonContent>
-    </IonPage>
-  );
-};
+    <>
+      <Menu />
+      <IonPage id="main">
+        <Toolbar />
 
-export default Home;
+        <IonContent>
+          <ExploreContainer {...props} />
+          <IonFab vertical="bottom" horizontal="end" slot="fixed">
+            <IonFabButton onClick={() => props.history.push('/new')}>
+              <IonIcon icon={add} />
+            </IonFabButton>
+          </IonFab>
+        </IonContent>
+      </IonPage>
+    </>
+  )
+}
+
+export default Home
