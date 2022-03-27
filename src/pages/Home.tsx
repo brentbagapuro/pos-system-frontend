@@ -4,17 +4,12 @@ import {
   IonFab,
   IonFabButton,
   IonIcon,
-  IonHeader,
-  IonToolbar,
-  IonButton,
-  IonMenuButton,
-  IonButtons,
 } from '@ionic/react'
 import { add } from 'ionicons/icons'
 import { RouteComponentProps } from 'react-router'
 
-import { Menu, Toolbar } from '../components/Layout'
-import ExploreContainer from '../components/ExploreContainer'
+import { Menu, Toolbar } from 'components/Layout'
+import ExploreContainer from 'components/ExploreContainer'
 
 const Home: React.FC<RouteComponentProps> = (props) => {
   return (
