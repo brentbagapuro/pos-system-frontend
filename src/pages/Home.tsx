@@ -19,12 +19,12 @@ const Home: React.FC<RouteComponentProps> = (props) => {
         <Toolbar />
 
         <IonContent>
-          <ExploreContainer {...props} />
+          {/* <ExploreContainer {...props} />
           <IonFab vertical="bottom" horizontal="end" slot="fixed">
             <IonFabButton onClick={() => props.history.push('/new')}>
               <IonIcon icon={add} />
             </IonFabButton>
-          </IonFab>
+          </IonFab> */}
         </IonContent>
       </IonPage>
     </>
