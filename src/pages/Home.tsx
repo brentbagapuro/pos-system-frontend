@@ -1,15 +1,8 @@
-import {
-  IonPage,
-  IonContent,
-  IonFab,
-  IonFabButton,
-  IonIcon,
-} from '@ionic/react'
-import { add } from 'ionicons/icons'
+import { IonPage, IonContent, IonGrid, IonRow, IonCol } from '@ionic/react'
 import { RouteComponentProps } from 'react-router'
 
 import { Menu, Toolbar } from 'components/Layout'
-import ExploreContainer from 'components/ExploreContainer'
+import { CartItems, ControlButtons, Categories, Items } from 'components/Home'
 
 const Home: React.FC<RouteComponentProps> = (props) => {
   return (
@@ -19,12 +12,18 @@ const Home: React.FC<RouteComponentProps> = (props) => {
         <Toolbar />
 
         <IonContent>
-          {/* <ExploreContainer {...props} />
-          <IonFab vertical="bottom" horizontal="end" slot="fixed">
-            <IonFabButton onClick={() => props.history.push('/new')}>
-              <IonIcon icon={add} />
-            </IonFabButton>
-          </IonFab> */}
+          <IonGrid>
+            <IonRow>
+              <IonCol size="3">
+                <CartItems />
+                <ControlButtons />
+              </IonCol>
+              <IonCol size="9">
+                <Categories />
+                <Items />
+              </IonCol>
+            </IonRow>
+          </IonGrid>
         </IonContent>
       </IonPage>
     </>
